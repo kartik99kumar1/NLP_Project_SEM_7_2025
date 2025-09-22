@@ -95,10 +95,11 @@ Welcome to this tutorial on deep learning basics...
 
 ## 📜 License
 
-MIT License © 2025
+CIT License © 2025
 
 ---
 
 ## 👨‍💻 Author
 
-Developed with ❤️ using Whisper + NLP.
+Developed By: KARTIK KUMAR
+USN: 1CD22CS061
