@@ -1,106 +1,113 @@
-# 🎥 Speech-Driven Video Summarizer with Whisper + BART
+# 🎬 Speech-Driven Video Summarization
+
+### Powered by **OpenAI Whisper + BART + PySceneDetect**
+
+---
 
 ## 📌 Project Overview
 
-This project is an **end-to-end NLP + Speech AI pipeline** that automatically:
+This project aims to **automatically generate concise summaries of videos** by combining **speech recognition**, **scene detection**, and **NLP summarization techniques**.
 
-1. **Detects scenes** in a video 🎬
-2. **Transcribes audio** from each scene using **OpenAI Whisper** 🎤
-3. **Summarizes transcripts** with **BART (transformer model)** 📝
-4. **Generates structured outputs**:
+* 🗣️ **Speech-to-Text** with **Whisper (ASR)**
+* 🎥 **Scene Detection** using **PySceneDetect**
+* 📝 **Summarization** with **BART (Transformer model)**
+* ⚡ **Smart Framing** for more natural, explanation-oriented summaries
 
-   * Full transcription → `TRANSCRIBE.TXT`
-   * Smart per-scene summaries → `SUMMARIZED_TEXT.TXT`
+The output is:
 
-✅ Ideal for **lectures, podcasts, meetings, tutorials** → instantly create notes & highlights!
-
----
-
-## ✨ Features
-
-* 🔍 **Scene Detection** – Splits video into meaningful shots (PySceneDetect).
-* 🗣 **Speech-to-Text** – Converts speech to text using Whisper (multilingual support).
-* 📝 **Summarization** – Uses BART to generate concise summaries for each scene.
-* 🎯 **Smart Framing** – Adds natural phrasing like “The speaker explains…” for clarity.
-* 📂 **Outputs** – Saves both full transcripts & concise summaries for further use.
+1. **Full Transcription** of the video (`TRANSCRIBE.TXT`)
+2. **Shot-wise Smart Summaries** (`SUMMARIZED_TEXT.TXT`)
 
 ---
 
-## 🛠 Tech Stack
+## 🚀 Features
 
-* [Whisper](https://github.com/openai/whisper) – Speech recognition
-* [BART](https://huggingface.co/facebook/bart-large-cnn) – Text summarization
-* [PySceneDetect](https://github.com/Breakthrough/PySceneDetect) – Scene boundary detection
-* [MoviePy](https://github.com/Zulko/moviepy) – Video editing utilities
-* [NLTK](https://www.nltk.org/) – Sentence tokenization
-* [FuzzyWuzzy](https://github.com/seatgeek/fuzzywuzzy) – Text similarity
+* 🎬 **Automatic shot boundary detection**
+* 🎤 **Accurate speech transcription** using Whisper
+* ✨ **Context-aware summarization** with BART
+* 🧠 **Smart framing of sentences** for a natural explanation flow
+* 📂 **Output files for transcription and summary**
 
 ---
 
-## 🚀 Setup & Installation
+## 🛠️ Tech Stack
 
-Run in **Google Colab** or locally with Python 3.9+
+* [OpenAI Whisper](https://github.com/openai/whisper) – Speech Recognition
+* [PySceneDetect](https://github.com/Breakthrough/PySceneDetect) – Shot/Scene Detection
+* [Hugging Face Transformers](https://huggingface.co/transformers/) – BART Summarization
+* [MoviePy](https://zulko.github.io/moviepy/) – Video Editing & Processing
+* [NLTK](https://www.nltk.org/) – Sentence Tokenization
+* [FuzzyWuzzy](https://github.com/seatgeek/fuzzywuzzy) – String Matching
 
-```bash
-# Install dependencies
-pip install -q transformers moviepy scenedetect git+https://github.com/openai/whisper.git ffmpeg-python nltk fuzzywuzzy python-Levenshtein
+---
+
+## 📂 Project Workflow
+
+1. **Setup & Installations** – Install dependencies (Whisper, PySceneDetect, BART, etc.)
+2. **Load Input Video** – Upload your `.mp4` file into the notebook
+3. **Scene Detection** – Detect video shot boundaries
+4. **Audio Demux + Transcription** – Extract audio and generate transcripts
+5. **Summarization & Framing** – Summarize transcripts using BART and frame them naturally
+6. **Save Outputs** – Export transcription (`TRANSCRIBE.TXT`) and summaries (`SUMMARIZED_TEXT.TXT`)
+
+---
+
+## 📖 Example Output
+
+**Input Video Scene:**
+
+```
+[0 – 15.4s]:
+Today, we will discuss how to implement object-oriented programming in C++...
+```
+
+**Generated Summary:**
+
+```
+[0 – 15.4s]: The speaker explains that object-oriented programming in C++ is implemented using classes and objects.
 ```
 
 ---
 
-## 📂 Usage
+## ▶️ How to Run
 
-### 1️⃣ Upload Input Video
+1. Clone the repository:
 
-Place your video in `/content/input/test.mp4` (or update the path).
+   ```bash
+   git clone https://github.com/<your-username>/<repo-name>.git
+   cd <repo-name>
+   ```
+2. Open the notebook in **Google Colab**
+3. Upload your video file into `/content/input/`
+4. Run the notebook cells step by step
+5. Find the outputs:
 
-### 2️⃣ Run the Pipeline
-
-```python
-python main.py  # or run the notebook cells in Colab
-```
-
-### 3️⃣ Outputs
-
-* `TRANSCRIBE.TXT` → Full speech-to-text transcript
-* `SUMMARIZED_TEXT.TXT` → Smart per-scene summaries
-
----
-
-## 📊 Example Output
-
-**Transcript (excerpt):**
-
-```
-[0.0 – 15.3]:
-Welcome to this tutorial on deep learning basics...
-```
-
-**Summary (excerpt):**
-
-```
-[0.0 – 15.3]: The speaker explains that this is a tutorial on deep learning basics.
-```
+   * `/content/TRANSCRIBE.TXT`
+   * `/content/SUMMARIZED_TEXT.TXT`
 
 ---
 
-## 🌟 Future Improvements
+## 📌 Use Cases
 
-* 📌 Merge summaries → Create a final video abstract
-* ✂️ Auto-generate **short highlight video** with key scenes
-* 🧾 Add **topic classification & keyword extraction**
-* 🤖 Build a **Q\&A chatbot** over the transcript
+* 🎓 **Educational Videos** – Summarize long lectures into concise notes
+* 🎥 **Media & Entertainment** – Extract scene-wise highlights
+* 📊 **Business Meetings** – Get quick summaries of recorded sessions
+* 📰 **Journalism** – Condense interviews into structured takeaways
 
 ---
 
-## 📜 License
+## 📢 Future Enhancements
 
-CIT License © 2025
+* 🤖 Integrate with **GPT-based abstractive summarization** for richer outputs
+* 🌐 Deploy as a **web app** for easy video uploads
+* 🔎 Add **topic-based search** inside summaries
 
 ---
 
 ## 👨‍💻 Author
 
-Developed By: KARTIK KUMAR
+**KARTIK KUMAR**
+USN: `1CD22CS061`
+Semester 7, **CITECH Bangalore**
+
 ---
-USN: 1CD22CS061
