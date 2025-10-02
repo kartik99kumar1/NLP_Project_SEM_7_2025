@@ -1,6 +1,8 @@
 # 🎬 Speech-Driven Video Summarization
 
 ### Powered by **OpenAI Whisper + BART + PySceneDetect**
+---
+#[GOOGLE COLAB NOTEBOOK]([https://github.com/openai/whisper](https://colab.research.google.com/drive/1oZ-G_vubB6vwYYtojiaFXhPvrLhGXCtg?usp=sharing)) – Click here to view the full implementation.
 
 ---
 
