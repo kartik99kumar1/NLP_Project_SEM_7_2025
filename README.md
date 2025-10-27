@@ -4,7 +4,7 @@
 ---
 #[GOOGLE COLAB NOTEBOOK](https://colab.research.google.com/drive/1oZ-G_vubB6vwYYtojiaFXhPvrLhGXCtg?usp=sharing) – Click here to view the full implementation.
 ---
-#[PPT]([https://colab.research.google.com/drive/1oZ-G_vubB6vwYYtojiaFXhPvrLhGXCtg?usp=sharing](https://docs.google.com/presentation/d/1xnyb5hy5fH18VUVH5_3byMf6NXjax-TK/edit?usp=drive_link&ouid=114235575491477008302&rtpof=true&sd=true)) – Click here to view the PPT.
+#[PPT](https://docs.google.com/presentation/d/1xnyb5hy5fH18VUVH5_3byMf6NXjax-TK/edit?usp=drive_link&ouid=114235575491477008302&rtpof=true&sd=true) – Click here to view the PPT.
 ---
 
 ## 📌 Project Overview
